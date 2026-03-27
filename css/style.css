@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden; /* ensures GIF doesn't create scrollbars */
+}
+
+/* Background GIF with overlay */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.75)), /* overlay */
+        url('../assets/background.gif') center/cover no-repeat; /* GIF */
+    z-index: -1;
+}
+
+#entryButton {
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid white;
+    border-radius: 100px;
+    color: white;
+    cursor: pointer;
+    font-size: 24px;
+    left: 50%;
+    padding: 20px 30px;
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.75s ease;
+    z-index: 9999;
+}
+
+#entryButton:hover {
+    background: rgba(0, 0, 0, 0.9);
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+#entryButton.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#mainPage {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#mainPage.fade-in {
+    opacity: 1;
+}
+
