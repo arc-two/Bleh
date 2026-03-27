@@ -16,7 +16,7 @@ body::before {
     height: 100%;
     background: 
         linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.75)), /* overlay */
-        url('../assets/background.gif') center/cover no-repeat; /* GIF */
+        url('./assets/background.gif') center/cover no-repeat; /* GIF */
     z-index: -1;
 }
 
